@@ -1,0 +1,53 @@
+form.invalid-feedback 
+{
+	display: block;
+}
+
+body 
+{
+	background-color: black;
+	margin: 0;
+	padding: 0;
+}
+
+.word-line, .btn, th, td 
+{
+    color: yellow;
+}
+
+.modal-content
+{
+	background-color: black;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.modal-content .modal-header .modal-title
+{
+	background-color: black;
+    color: yellow;
+}
+.modal-body .mb-3 
+{
+    background-color: black;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.modal-body .mb-3 label, .modal-body .mb-3 input, .modal-body .mb-3 select 
+{
+	background-color: black;
+    color: yellow;
+}
+
+.centered 
+{
+  	text-align: center !important;
+  	vertical-align: middle !important;
+}
+
+.yellow-text-input
+{
+  	background-color: black;
+  	color: yellow;
+}

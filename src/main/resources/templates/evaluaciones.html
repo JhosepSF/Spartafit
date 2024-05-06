@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+	<meta charset="utf-8">
+	<title>SpartaFit</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+	<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet">
+	<link rel="icon" type="image/png" href="https://img.icons8.com/ios-filled/50/FAB005/weightlift.png">
+	<link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+	<link rel="stylesheet" type="text/css" href="/css/master.css">
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgb(247, 252, 18);"> 
+	    <div class="container-fluid" style="background-color: rgb(0, 0, 0);">
+	        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+	            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+	            aria-label="Toggle navigation">
+	            <span class="navbar-toggler-icon"></span>
+	        </button>
+	        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+	                <li class="nav-item">
+	                    <a class="nav-link" style="margin-left: 50px; margin-right: 20px; color: rgb(255, 255, 0); font-weight: bold; font-size: 20px;" href="/spartafit">Inicio</a>
+	                </li>
+	                <li class="nav-item">
+	                    <a class="nav-link" style="margin-right: 20px; color: rgb(255, 255, 0); font-weight: bold; font-size: 20px;" href="/spartafit/clientes">Clientes</a>
+	                </li>
+	                <li class="nav-item">
+	                    <a class="nav-link" style="margin-right: 20px; color: rgb(255, 255, 0); font-weight: bold; font-size: 20px;" href="/spartafit/asistencias">Asistencias</a>
+	                </li>
+	                <li class="nav-item">
+	                    <a class="nav-link" style="margin-right: 20px; color: rgb(255, 255, 0); font-weight: bold; font-size: 20px;" href="/spartafit/evaluaciones">Evaluaciones</a>
+	                </li>
+	                <li class="nav-item">
+	                    <a class="nav-link" style="margin-right: 20px; color: rgb(255, 255, 0); font-weight: bold; font-size: 20px;" href="/spartafit/pagos">Pagos</a>
+	                </li>
+					<li class="nav-item">
+	                    <a class="nav-link" style="margin-right: 20px; color: rgb(255, 255, 0); font-weight: bold; font-size: 20px;" href="/spartafit/clasesempleado">Clases - Empleados</a>
+	                </li>
+	                <li class="nav-item">
+	                    <a class="nav-link" style="margin-right: 20px; color: rgb(255, 255, 0); font-weight: bold; font-size: 20px;" href="/spartafit/clases">Clases</a>
+	                </li>
+	                <li class="nav-item">
+	                    <a class="nav-link" style="margin-right: 20px; color: rgb(255, 255, 0); font-weight: bold; font-size: 20px;" href="/spartafit/empleados">Empleados</a>
+	                </li>
+	            </ul>
+	            <form class="d-flex">
+	                <a class="navbar-brand" style="margin-left: 20px; color: rgb(255, 255, 0); font-weight: bold; text-shadow: 2px 2px 6px rgb(255, 128, 0);">
+					<img width="50" height="50" 
+					src="https://img.icons8.com/ios-filled/50/FAB005/weightlift.png" 
+					alt="weightlift"/>	                   
+					SpartaFit
+	                </a>
+	            </form>
+	        </div>
+	    </div>
+	</nav>
+	<div class="main">
+        <nav class="navbar navbar-expand px-3 border-bottom">
+          <button class="btn" id="sidebar-toggle" type="button">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </nav>
+
+        <main class="content mx-4 py-2">
+          <div class="cointainer-fluid">
+            <div class="mb-3">
+              <h3 class="word-line">EVALUACIONES FISICAS</h3>
+            </div>
+
+            <div class="mb-3 py-3">
+              <button
+                type="button"
+                class="btn btn btn-outline-secondary"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+                data-bs-whatever="@mdo"
+              >
+                + Agregar Evaluacion
+              </button>
+            </div>
+
+            <div
+              class="modal fade"
+              id="exampleModal"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                      Nuevo Evaluacion
+                    </h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+					<form>
+					  <div class="mb-3">
+					    <label for="recipient-name" class="col-form-label">Cliente:</label>
+					    <select class="form-select" data-search="true" id="Selectcliente">
+							<option>Clientes:</option>
+						</select>
+					  </div>
+					  <div class="mb-3">
+					    <label for="recipient-name" class="col-form-label">Fecha Evaluacion:</label>
+						<input type="date" name="fecha" id="fecha" /><br />			
+					  </div>
+					  <div class="mb-3">
+					    <label for="recipient-name" class="col-form-label">Peso:</label>
+					    <input type="text" class="form-control" id="peso"/>
+					  </div> 
+					  <div class="mb-3">
+					    <label for="recipient-name" class="col-form-label">Altura:</label>
+					    <input type="text" class="form-control" id="altura"/>
+					  </div>
+					  <div class="mb-3">
+					    <label for="recipient-name" class="col-form-label">IMC:</label>
+					    <input type="text" class="form-control" id="imc" />
+					  </div>
+					  	
+					</form>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                      id="btnCancelar"
+                    >
+                      Cancelar
+                    </button>
+                    <button type="button" class="btn btn-primary" id="btnAceptar">
+					  Aceptar
+					</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+     
+            <div class="row">
+              <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                <table id="datatable_empleados" class="table table-striped">
+                  <caption></caption>
+                  <thead>
+                    <tr>
+                      <th class="centered">Id Evaluacion</th>
+                      <th class="centered">Cliente</th>
+                      <th class="centered">Fecha</th>
+                      <th class="centered">Peso</th>
+                      <th class="centered">Altura</th>
+                      <th class="centered">IMC</th>
+                    </tr>
+                  </thead>
+                  <tbody id="tableBody_empleados"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+	
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+	<script src="/js/evaluaciones.js"></script>
+</body>
+
+</html>
